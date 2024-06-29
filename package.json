@@ -1,9 +1,12 @@
 {
   "name": "esm-load-worker",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "type": "module",
   "author": "luvletterldl",
   "license": "ISC",
+  "scripts": {
+    "build": "tsup"
+  },
   "homepage": "https://github.com/luvletterldl/esm-worker",
   "repository": {
     "type": "git",
@@ -14,16 +17,22 @@
   },
   "exports": {
     ".": {
-      "import": "./src/main.js"
+      "types": "./dist/main.d.ts",
+      "import": "./dist/main.js"
     },
     "./worker.js": {
-      "import": "./src/worker.js"
+      "types": "./dist/worker.d.ts",
+      "import": "./dist/worker.js"
     }
   },
   "files": [
-    "src"
+    "dist"
   ],
   "dependencies": {
     "consola": "^3.2.3"
+  },
+  "devDependencies": {
+    "tsup": "^8.1.0",
+    "typescript": "^5.5.2"
   }
 }

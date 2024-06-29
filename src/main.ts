@@ -1,12 +1,13 @@
+import type { WorkerReceiveData } from './worker'
 import { WorkerHandleType } from "./worker"
 
 const workerUrl = new URL('./worker.js', import.meta.url)
-console.log('workerUrl', workerUrl)
 const worker = new Worker(workerUrl, { type: 'module' })
 
 export async function parseToJson() {
   return new Promise((resolve) => {
-    worker.postMessage({ type: WorkerHandleType.parse, data: '{"a":1,"b":"c"}' })
+    const data: WorkerReceiveData = { type: WorkerHandleType.Parse, data: '{"a":1,"b":"c"}' }
+    worker.postMessage(data)
     worker.onmessage = (e) => {
       console.log(e.data)
       resolve(e.data)
@@ -16,7 +17,8 @@ export async function parseToJson() {
 
 export async function resolveData() {
   return new Promise((resolve) => {
-    worker.postMessage({ type: WorkerHandleType.resolve, data: true })
+    const data: WorkerReceiveData = { type: WorkerHandleType.Resolve, data: true }
+    worker.postMessage(data)
     worker.onmessage = (e) => {
       console.log(e.data)
       resolve(e.data)

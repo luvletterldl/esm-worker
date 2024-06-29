@@ -1,0 +1,25 @@
+{
+  "name": "esm-worker",
+  "version": "1.0.0",
+  "author": "luvletterldl",
+  "license": "ISC",
+  "homepage": "https://github.com/luvletterldl/esm-worker",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luvletterldl/esm-worker.git"
+  },
+  "bugs": {
+    "url": "https://github.com/luvletterldl/esm-worker/issues"
+  },
+  "exports": {
+    ".": {
+      "import": "./src/main.js"
+    }
+  },
+  "files": [
+    "src"
+  ],
+  "dependencies": {
+    "consola": "^3.2.3"
+  }
+}

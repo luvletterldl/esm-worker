@@ -1,6 +1,7 @@
 {
   "name": "esm-worker",
   "version": "1.0.0",
+  "type": "module",
   "author": "luvletterldl",
   "license": "ISC",
   "homepage": "https://github.com/luvletterldl/esm-worker",
@@ -14,6 +15,9 @@
   "exports": {
     ".": {
       "import": "./src/main.js"
+    },
+    "./worker.js": {
+      "import": "./src/worker.js"
     }
   },
   "files": [

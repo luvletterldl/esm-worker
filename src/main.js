@@ -1,6 +1,7 @@
 import { WorkerHandleType } from "./worker"
 
 const workerUrl = new URL('./worker.js', import.meta.url)
+console.log('workerUrl', workerUrl)
 const worker = new Worker(workerUrl, { type: 'module' })
 
 export async function parseToJson() {

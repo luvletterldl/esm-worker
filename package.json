@@ -1,6 +1,6 @@
 {
-  "name": "esm-worker",
-  "version": "1.0.0",
+  "name": "esm-load-worker",
+  "version": "0.0.1",
   "type": "module",
   "author": "luvletterldl",
   "license": "ISC",
